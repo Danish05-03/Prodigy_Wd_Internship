@@ -1,0 +1,109 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.stopwatch-container {
+  background: #1e1e2f;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 30px;
+  width: 350px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.time-display {
+  font-size: 64px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons button#start {
+  background: #4caf50;
+  color: white;
+}
+
+.buttons button#start:hover {
+  background: #3e8e41;
+}
+
+.buttons button#pause {
+  background: #f39c12;
+  color: white;
+}
+
+.buttons button#pause:hover {
+  background: #d35400;
+}
+
+.buttons button#reset {
+  background: #e74c3c;
+  color: white;
+}
+
+.buttons button#reset:hover {
+  background: #c0392b;
+}
+
+.buttons button#lap {
+  background: #3498db;
+  color: white;
+}
+
+.buttons button#lap:hover {
+  background: #2980b9;
+}
+
+.laps {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.laps li {
+  background: #2c2c3e;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.laps li:nth-child(odd) {
+  background: #383850;
+}

@@ -1,0 +1,153 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fce38a, #f38181);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  transition: background 0.5s ease-in-out;
+}
+
+body.winner {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  animation: winner-bg 2s infinite alternate;
+}
+
+@keyframes winner-bg {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.game-container {
+  text-align: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.mode-selector {
+  margin-bottom: 20px;
+}
+
+.mode-selector button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin: 5px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-selector button:hover {
+  background: #3e8e41;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cell:hover {
+  background: #ddd;
+}
+
+.message {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #555;
+}
+
+.restart {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.restart:hover {
+  background: #2980b9;
+}
+
+/* Slash line */
+.board::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 5px;
+  background: #ff5733;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.board.winner.horizontal-0::after {
+  transform: translateY(50px) scaleX(1);
+}
+
+.board.winner.horizontal-1::after {
+  transform: translateY(150px) scaleX(1);
+}
+
+.board.winner.horizontal-2::after {
+  transform: translateY(250px) scaleX(1);
+}
+
+.board.winner.vertical-0::after {
+  transform: translateX(50px) rotate(90deg) scaleX(1);
+}
+
+.board.winner.vertical-1::after {
+  transform: translateX(150px) rotate(90deg) scaleX(1);
+}
+
+.board.winner.vertical-2::after {
+  transform: translateX(250px) rotate(90deg) scaleX(1);
+}
+
+.board.winner.diagonal-0::after {
+  transform: rotate(45deg) scaleX(1);
+}
+
+.board.winner.diagonal-1::after {
+  transform: rotate(-45deg) scaleX(1);
+}

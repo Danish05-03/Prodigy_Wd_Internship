@@ -1,0 +1,4 @@
+// Example: Mobile menu toggle
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('.nav').classList.toggle('active');
+});
